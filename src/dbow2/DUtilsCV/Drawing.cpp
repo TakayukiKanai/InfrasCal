@@ -135,7 +135,7 @@ void Drawing::drawCorrespondences(cv::Mat &image, const cv::Mat &img1,
   Drawing::drawKeyPoints(aux2, kp2);
 
   cv::Mat im = cv::Mat::zeros(rows, cols, CV_8UC1);
-  IplImage ipl_im = IplImage(im);
+  IplImage ipl_im = cvIplImage(im);
   IplImage* ipl_ret = &ipl_im;
 
   CvRect roi;
@@ -145,7 +145,7 @@ void Drawing::drawCorrespondences(cv::Mat &image, const cv::Mat &img1,
   roi.height = img1.rows;
 	
   cvSetImageROI(ipl_ret, roi);
-  IplImage ipl_aux1 = IplImage(aux1);
+  IplImage ipl_aux1 = cvIplImage(aux1);
 #ifdef HAVE_OPENCV3
   cvCopy(&ipl_aux1, ipl_ret);
 #else // HAVE_OPENCV3
@@ -158,7 +158,7 @@ void Drawing::drawCorrespondences(cv::Mat &image, const cv::Mat &img1,
   roi.height = img2.rows;
 	
   cvSetImageROI(ipl_ret, roi);
-  IplImage ipl_aux2 = IplImage(aux2);
+  IplImage ipl_aux2 = cvIplImage(aux2);
 #ifdef HAVE_OPENCV3
   cvCopy(&ipl_aux2, ipl_ret);
 #else // HAVE_OPENCV3

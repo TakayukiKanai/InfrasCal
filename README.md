@@ -1,6 +1,10 @@
 InfrasCal
 =========
 
+### Unofficial modification
+- CUDA --> `11.2`
+- OpenCV & opencv_contrib --> `4.1.1`
+
 Introduction
 ------------
 
